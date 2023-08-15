@@ -1,0 +1,10 @@
+from firebase import firebase
+
+# bağlantı ekleme
+firebase=firebase.FirebaseApplication('https://youtubuevideo-default-rtdb.firebaseio.com/',None)
+
+
+
+firebase.delete('Users','') #hepsini siler
+
+firebase.delete('Users/2/','age') # 2 isimlinin age değerini siler
