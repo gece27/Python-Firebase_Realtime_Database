@@ -1,0 +1,31 @@
+from firebase import firebase
+
+# bağlantı ekleme
+firebase=firebase.FirebaseApplication('https://youtubuevideo-default-rtdb.firebaseio.com/',None)
+
+
+data={
+    "name":"eren",
+    "password":"er",
+    "age":17
+        }
+
+firebase.post('Users',data) # adding data /normal ekleme
+
+firebase.patch('Users/first',data) #adding data ->'Users/first' / first adı ile ekleme
+
+
+#adding with input / input ile ekleme
+
+for i in range(3):
+    name=input("name:")
+    password=input("password:")
+    age=input("age:")
+
+    data={
+    "name":name,
+    "password":password,
+    "age":age
+        }
+
+    firebase.patch(f'Users/{i}',data)
